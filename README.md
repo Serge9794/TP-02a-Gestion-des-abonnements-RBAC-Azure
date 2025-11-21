@@ -209,7 +209,7 @@ __🔹  PowerShell – Abonnements Commande__
 
 *Get-AzManagementGroup	Liste des Management Groups.
 
-__🔹 Tableau CLI – Abonnements Commande__
+__🔹  CLI – Abonnements Commande__
 
      Explication
 *az account list:	Liste les abonnements,
