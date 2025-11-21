@@ -3,7 +3,7 @@ La gestion des abonnements et le contrôle d'accès basé sur les rôles (RBAC) 
 
 __Objectif du laboratoire__
 
-Dans ce laboratoire, vous allez apprendre à :
+<u>Dans ce laboratoire, vous allez apprendre à</u>:
 
 Organiser vos abonnements Azure via des Groupes d’administration
 
