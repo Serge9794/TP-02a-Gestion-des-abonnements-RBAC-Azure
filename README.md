@@ -125,11 +125,11 @@ __Objectif :__
 
 Créer un rôle support permettant :
 
--De créer des tickets
+-De créer des tickets support,
 
--De gérer les demandes support (Sans accès à l’enregistrement des fournisseurs Azure Support)
+-De gérer les demandes support (Sans accès à l’enregistrement des fournisseurs Azure Support),
 
-              __Étapes :__
+            __Etapes:__
 
 *Management Group → IAM + Ajouter → Ajouter un rôle personnalisé
 
