@@ -3,42 +3,40 @@ La gestion des abonnements et le contrôle d'accès basé sur les rôles (RBAC) 
 
 __Objectif du laboratoire__
 
-<u>Dans ce laboratoire, vous allez apprendre à:</u>
+Dans ce laboratoire, vous allez apprendre à:
 
-Organiser vos abonnements Azure via des Groupes d’administration
+-Organiser vos abonnements Azure via des Groupes d’administration,
 
-Attribuer des rôles intégrés RBAC
+-Attribuer des rôles intégrés RBAC,
 
-Créer un rôle RBAC personnalisé
+-Créer un rôle RBAC personnalisé,
 
-Surveiller les attributions via le Journal d’activité
+-Surveiller les attributions via le Journal d’activité,
 
-Comprendre le format JSON des rôles RBAC
-
-Manipuler les abonnements avec PowerShell et CLI
+-Comprendre le format JSON des rôles RBAC.
 
 __🧩 TÂCHE 1 — Mettre en place les Groupes de gestion__
 __Étapes :__
 
-Connectez-vous au portail Azure
+-Connectez-vous au portail Azure,
 
-Ouvrez Microsoft Entra ID → Propriétés
+-Ouvrez Microsoft Entra ID → Propriétés,
 
-Vérifiez : Gestion des accès aux ressources Azure
+-Vérifiez : Gestion des accès aux ressources Azure,
 
-Recherchez Groupes de gestion
+-Recherchez Groupes de gestion,
 
-Cliquez sur + Créer
+-Cliquez sur + Créer
 
 Saisissez :
 
-ID : Polo-mg1
+.ID : Polo-mg1
 
-Nom : Polo-mg1
+.Nom : Polo-mg1
 
-Soumettre
+.Soumettre
 
-Actualiser la page
+.Actualiser la page
 
 _À noter_
 
@@ -46,11 +44,13 @@ Le Root Management Group est créé par défaut
 
 Tous les abonnements héritent de ses policies et RBAC
 
-📸 Capture recommandée :
+__📸 Captures__
 
-Vue des Management Groups
 
-Propriétés → Gestion des accès aux ressources Azure
+<img width="1167" height="744" alt="T11" src="https://github.com/user-attachments/assets/f4c4b37c-0c36-4184-b4f2-d6276829630f" />
+<img width="1187" height="925" alt="T11 (3)" src="https://github.com/user-attachments/assets/a17360ee-fd02-44ee-b313-4b84a7eea699" />
+<img width="1209" height="899" alt="T11 (2)" src="https://github.com/user-attachments/assets/f78bd6ac-abe1-462f-b070-935192db5218" />
+
 
 __🧩 TÂCHE 2 — Attribuer un rôle Azure intégré__
 Objectif :
