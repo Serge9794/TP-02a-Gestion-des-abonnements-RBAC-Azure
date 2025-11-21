@@ -118,161 +118,154 @@ __📸 Captures :__
 
 
 __🧩 TÂCHE 3 — Créer un rôle RBAC personnalisé__
-_Objectif :_
+
+
+__Objectif :__
+
 
 Créer un rôle support permettant :
 
-De créer des tickets
+-De créer des tickets
 
-De gérer les demandes support
-❗ Sans accès à l’enregistrement des fournisseurs Azure Support
+-De gérer les demandes support (Sans accès à l’enregistrement des fournisseurs Azure Support)
 
-Étapes :
+              __Étapes :__
 
-Management Group → IAM
-
-+ Ajouter → Ajouter un rôle personnalisé
+*Management Group → IAM + Ajouter → Ajouter un rôle personnalisé
 
 Onglet Général :
 
-Nom : Custom Support Request
+*Nom : Custom Support Request(role personnalisé)
 
-Description :Un rôle de contributeur personnalisé pour les demandes d'assistance
+*Description :Un rôle de contributeur personnalisé pour les demandes d'assistance
 
-Base permissions : Cloner un rôle
+*Base permissions : Cloner un rôle
 
-Choisir : Contributeur aux demandes d’assistance
+*Choisir : Contributeur aux demandes d’assistance
 
 Onglet Permissions
 
-Cliquez Exclure des autorisations
+*Cliquez Exclure des autorisations
 
-Recherchez Microsoft.Support
+*Recherchez Microsoft.Support
 
-Exclure : Other: Support resource provider registers
+*Exclure : Other: Support resource provider registers
 
-Onglet Étendues assignables :
+*Onglet Étendues assignables : Ajouter : /providers/Microsoft.Management/managementGroups/Polo-mg1
 
-Ajouter : /providers/Microsoft.Management/managementGroups/Polo-mg1
+*Vérifier + Créer
 
-Vérifier + Créer
+  __📸 Captures:__
 
-📸 Capture recommandée :
-
-Rôle cloné
-
-Permissions modifiées
-
-JSON final
-
-🧩 TÂCHE 4 — Surveiller les attributions via le Journal d’activité
-Étapes :
-
-Ouvrir le Management Group Polo-mg1
-
-Journal d’activité
-
-Filtrer par :
-
-Operation : Create role assignment, Create custom role
-
-Vérifier les événements
-
-📸 Capture recommandée :
-
-Journal filtré
+<img width="1240" height="884" alt="T33" src="https://github.com/user-attachments/assets/8ebb3b6d-33c8-4f9f-96b9-0bd13ef40ad5" />
+<img width="1214" height="905" alt="T32" src="https://github.com/user-attachments/assets/a5932f00-0df8-490c-a4ab-e86e682a350c" />
+<img width="1224" height="930" alt="T31" src="https://github.com/user-attachments/assets/7cf5c143-afd1-417c-a2aa-2dbaacc11eca" />
+<img width="1246" height="854" alt="T37" src="https://github.com/user-attachments/assets/5e1ba8a5-146d-4ccb-95f2-76795a36447f" />
+<img width="1207" height="858" alt="T36" src="https://github.com/user-attachments/assets/176e12f2-ea27-4f89-ac62-ecad214839e4" />
+<img width="1205" height="869" alt="T35" src="https://github.com/user-attachments/assets/ee2a483b-1b85-411e-9661-a1deaa7bd19b" />
+<img width="1182" height="903" alt="T34" src="https://github.com/user-attachments/assets/58b131c9-45f2-47e0-9f18-fdba0d83cd1b" />
 
 
 
-Portail
-Supprimer → Saisir le nom → Supprimer
+__🧩 TÂCHE 4 — Surveiller les attributions via le Journal d’activité__
 
-PowerShell
-Remove-AzResourceGroup -Name <resourceGroupName>
+__Étapes :__
 
-CLI
-az group delete --name <resourceGroupName>
+*Ouvrir le Management Group Polo-mg1,
 
-📊 Tableaux : Commandes importantes PowerShell et CLI Azure
-__🔹 Tableau PowerShell – Abonnements
-Commande__
-Explication
-Get-AzSubscription	Liste tous les abonnements accessibles
-Set-AzContext -Subscription <ID>	Bascule sur un abonnement spécifique
-Get-AzTenant	Affiche les informations du tenant
-Get-AzRoleDefinition	Liste des rôles RBAC disponibles
-Get-AzRoleAssignment	Montre les attributions de rôles actuelles
-New-AzRoleDefinition -InputFile file.json	Crée un rôle RBAC personnalisé via JSON
-New-AzManagementGroup -GroupName "Polo-mg1"	Crée un Management Group
-Get-AzManagementGroup	Liste des Management Groups
-__🔹 Tableau CLI – Abonnements
-Commande__
-Explication
-az account list	Liste les abonnements
-az account set --subscription <ID>	Change l’abonnement actif
-az role definition list	Affiche la liste des rôles RBAC
-az role assignment list	Liste les attributions de rôles
-az role definition create --role-definition file.json	Crée un rôle personnalisé
-az account show	Affiche l’abonnement actif
-az managementgroup show --name Polo-mg1	Affiche un Management Group
-az managementgroup list	Liste des Management Groups
-📦 Quel est le format JSON Azure RBAC ?
+*Journal d’activité,
 
-Voici la structure :
+*Filtrer par : Operation : Create role assignment, Create custom role,
 
-{
-  "Name": "Custom Support Request",
-  "Id": null,
-  "IsCustom": true,
-  "Description": "A custom contributor role for support requests.",
-  "Actions": [
-    "Microsoft.Support/*"
-  ],
-  "NotActions": [
-    "Microsoft.Support/register/action"
-  ],
-  "AssignableScopes": [
-    "/providers/Microsoft.Management/managementGroups/az104-mg1"
-  ]
-}
+*Vérifier les événements
+
+  __📸 Capture du Journal filtré:__
+
+<img width="1227" height="885" alt="T4" src="https://github.com/user-attachments/assets/a0cf244a-f6bd-493f-9f4c-8406b7c35d96" />
+
+
+
+
+
+
+__Commandes importantes PowerShell et CLI Azure__
+
+__🔹  PowerShell – Abonnements Commande__
+
+      Explication
+*Get-AzSubscription :	Liste tous les abonnements accessibles,
+
+*Set-AzContext -Subscription <ID>	: Bascule sur un abonnement spécifique,
+
+*Get-AzTenant	: Affiche les informations du tenant,
+
+*Get-AzRoleDefinition:	Liste des rôles RBAC disponibles,
+
+*Get-AzRoleAssignment:	Montre les attributions de rôles actuelles,
+
+*New-AzRoleDefinition -InputFile file.json:	Crée un rôle RBAC personnalisé via JSON,
+
+*New-AzManagementGroup -GroupName "Polo-mg1"	:Crée un Management Group,
+
+*Get-AzManagementGroup	Liste des Management Groups.
+
+__🔹 Tableau CLI – Abonnements Commande__
+
+     Explication
+*az account list:	Liste les abonnements,
+
+*az account set --subscription <ID>:	Change l’abonnement actif,
+
+*az role definition list:	Affiche la liste des rôles RBAC,
+
+*az role assignment list:	Liste les attributions de rôles,
+
+*az role definition create --role-definition file.json:	Crée un rôle personnalisé,
+
+*az account show:	Affiche l’abonnement actif,
+
+*az managementgroup show --name Polo-mg1 :	Affiche un Management Group,
+
+*az managementgroup list :	Liste des Management Groups.
+
 
 __Éléments importants :__
 
-Actions : opérations autorisées
+*Actions : opérations autorisées
 
-NotActions : opérations explicitement interdites
+*NotActions : opérations explicitement interdites
 
-AssignableScopes : où le rôle peut être attribué
+*AssignableScopes : où le rôle peut être attribué
 
 __🛠️ Étapes pour créer un rôle RBAC personnalisé__
 
-Identifier un rôle existant à cloner
+*Identifier un rôle existant à cloner
 
-Ouvrir IAM → Ajouter → Rôle personnalisé
+*Ouvrir IAM → Ajouter → Rôle personnalisé
 
-Renseigner le nom et la description
+*Renseigner le nom et la description
 
-Choisir un rôle à cloner
+*Choisir un rôle à cloner
 
-Modifier les permissions (Actions / NotActions)
+*Modifier les permissions (Actions / NotActions)
 
-Définir les étendues assignables
+*Définir les étendues assignables
 
-Vérifier
+*Vérifier
 
-Créer le rôle
+*Créer le rôle
 
-L’attribuer via IAM
+*L’attribuer via IAM
 
 
 __🏁 Points clés à retenir__
 
-Les Management Groups structurent les abonnements
+-Les Management Groups structurent les abonnements
 
-Les rôles RBAC permettent un contrôle granulaire
+-Les rôles RBAC permettent un contrôle granulaire
 
-Les rôles peuvent être intégrés ou personnalisés
+-Les rôles peuvent être intégrés ou personnalisés
 
-Les rôles sont définis dans un fichier JSON
+-Les rôles sont définis dans un fichier JSON
 
-Le Journal d’activité permet d’auditer les attributions
+-Le Journal d’activité permet d’auditer les attributions
