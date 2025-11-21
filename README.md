@@ -15,8 +15,11 @@ Dans ce laboratoire, vous allez apprendre à:
 
 -Comprendre le format JSON des rôles RBAC.
 
+
 __🧩 TÂCHE 1 — Mettre en place les Groupes de gestion__
+
 __Étapes :__
+
 
 -Connectez-vous au portail Azure,
 
@@ -38,48 +41,81 @@ Saisissez :
 
 .Actualiser la page
 
+
 _À noter_
+
 
 Le Root Management Group est créé par défaut
 
 Tous les abonnements héritent de ses policies et RBAC
 
+
 __📸 Captures__
 
 
+
+
 <img width="1167" height="744" alt="T11" src="https://github.com/user-attachments/assets/f4c4b37c-0c36-4184-b4f2-d6276829630f" />
+
+
+
 <img width="1187" height="925" alt="T11 (3)" src="https://github.com/user-attachments/assets/a17360ee-fd02-44ee-b313-4b84a7eea699" />
+
+
+
 <img width="1209" height="899" alt="T11 (2)" src="https://github.com/user-attachments/assets/f78bd6ac-abe1-462f-b070-935192db5218" />
 
 
+
+
 __🧩 TÂCHE 2 — Attribuer un rôle Azure intégré__
-Objectif :
+
+
+__Objectif :__
 
 Donner au groupe Service Desk la capacité de gérer les machines virtuelles.
 
-_Étapes :_
+__Étapes :__
 
-Sélectionnez le groupe d’administration : Polo-mg1
 
-Ouvrez Contrôle d’accès (IAM) → Rôles
+*Sélectionnez le groupe d’administration : Polo-mg1,
 
-Parcourez les rôles intégrés
+*Ouvrez Contrôle d’accès (IAM) → Rôles,
 
-Cliquez sur + Ajouter → Ajouter une attribution de rôle
+*Parcourez les rôles intégrés,
 
-Choisissez : Contributeur de machine virtuelle
+*Cliquez sur + Ajouter → Ajouter une attribution de rôle,
 
-Membres → Ajouter le groupe helpdesk
+*Choisissez : Contributeur de machine virtuelle,
 
-Vérifier + attribuer (deux fois)
+*Membres → Ajouter le groupe helpdesk,
 
-Vérifier que l’attribution est visible dans l’onglet Attributions
+*Vérifier + attribuer (deux fois),
 
-📸 Capture recommandée :
+*Vérifier que l’attribution est visible dans l’onglet Attributions,
 
-Vue du rôle sélectionné
 
-IAM → Role Assignments
+__📸 Captures :__
+
+
+
+<img width="1211" height="917" alt="T24" src="https://github.com/user-attachments/assets/a4fac366-8847-4002-ac91-9ffa002e6008" />
+
+
+<img width="1208" height="906" alt="T23" src="https://github.com/user-attachments/assets/989ad78c-c59e-4339-8ae4-17fe07db1eb7" />
+
+
+<img width="1216" height="903" alt="T22 (2)" src="https://github.com/user-attachments/assets/9122dd70-d3c9-40c3-9c4e-aa984978ae2c" />
+
+
+<img width="1201" height="884" alt="T21" src="https://github.com/user-attachments/assets/5439aad9-3738-462c-b1c0-92667f67fb2f" />
+
+
+<img width="1212" height="919" alt="T25" src="https://github.com/user-attachments/assets/8ef61d1a-146a-4255-aa49-8e416726679c" />
+
+
+
+
 
 __🧩 TÂCHE 3 — Créer un rôle RBAC personnalisé__
 _Objectif :_
